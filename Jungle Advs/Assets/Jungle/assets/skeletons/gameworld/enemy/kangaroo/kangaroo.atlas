@@ -1,0 +1,97 @@
+
+skeleton.png
+size: 256,32
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+kangaroo__fist_L
+  rotate: false
+  xy: 186, 5
+  size: 12, 9
+  orig: 12, 9
+  offset: 0, 0
+  index: -1
+kangaroo__fist_R
+  rotate: false
+  xy: 186, 16
+  size: 13, 11
+  orig: 13, 11
+  offset: 0, 0
+  index: -1
+kangaroo__foot_L
+  rotate: false
+  xy: 130, 16
+  size: 33, 11
+  orig: 33, 11
+  offset: 0, 0
+  index: -1
+kangaroo__foot_R
+  rotate: false
+  xy: 130, 3
+  size: 33, 11
+  orig: 33, 11
+  offset: 0, 0
+  index: -1
+kangaroo__head
+  rotate: false
+  xy: 95, 3
+  size: 33, 24
+  orig: 33, 24
+  offset: 0, 0
+  index: -1
+kangaroo__lowerHand_L
+  rotate: false
+  xy: 201, 22
+  size: 12, 5
+  orig: 12, 5
+  offset: 0, 0
+  index: -1
+kangaroo__lowerHand_R
+  rotate: false
+  xy: 201, 22
+  size: 12, 5
+  orig: 12, 5
+  offset: 0, 0
+  index: -1
+kangaroo__tail
+  rotate: false
+  xy: 50, 9
+  size: 43, 18
+  orig: 43, 18
+  offset: 0, 0
+  index: -1
+kangaroo__torso
+  rotate: true
+  xy: 0, 0
+  size: 27, 48
+  orig: 27, 48
+  offset: 0, 0
+  index: -1
+kangaroo__upperHand_L
+  rotate: true
+  xy: 50, 0
+  size: 7, 13
+  orig: 7, 13
+  offset: 0, 0
+  index: -1
+kangaroo__upperHand_R
+  rotate: true
+  xy: 50, 0
+  size: 7, 13
+  orig: 7, 13
+  offset: 0, 0
+  index: -1
+kangaroo__upperLeg_R
+  rotate: false
+  xy: 165, 4
+  size: 19, 23
+  orig: 19, 23
+  offset: 0, 0
+  index: -1
+kangaroo_upperLeg_L
+  rotate: false
+  xy: 165, 4
+  size: 19, 23
+  orig: 19, 23
+  offset: 0, 0
+  index: -1

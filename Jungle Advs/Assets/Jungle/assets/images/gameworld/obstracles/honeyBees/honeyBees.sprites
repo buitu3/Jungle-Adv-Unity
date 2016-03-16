@@ -1,0 +1,8 @@
+<img name="honey_bee.png">
+
+	<spr name="1.png" x="65" y="93" w="60" h="88" fx="2" fy="1" fw="65" fh="95">
+	<spr name="2.png" x="66" y="2" w="60" h="89" fx="2" fy="0" fw="65" fh="95">
+	<spr name="3.png" x="2" y="2" w="62" h="88" fx="2" fy="1" fw="65" fh="95">
+	<spr name="4.png" x="2" y="92" w="61" h="93" fx="2" fy="0" fw="65" fh="95">
+</img>
+

@@ -1,0 +1,9 @@
+<img name="smoke_jump.png">
+
+	<spr name="1.png" x="2" y="29" w="39" h="24" fx="2" fy="1" fw="42" fh="25">
+	<spr name="2.png" x="2" y="2" w="33" h="25" fx="2" fy="0" fw="42" fh="25">
+	<spr name="3.png" x="37" y="2" w="37" h="24" fx="0" fy="0" fw="42" fh="25">
+	<spr name="4.png" x="43" y="28" w="32" h="24" fx="0" fy="0" fw="42" fh="25">
+	<spr name="5.png" x="76" y="2" w="31" h="21" fx="1" fy="3" fw="42" fh="25">
+</img>
+

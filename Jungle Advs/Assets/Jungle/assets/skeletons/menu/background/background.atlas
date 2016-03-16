@@ -1,0 +1,111 @@
+
+skeleton.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+background-02
+  rotate: false
+  xy: 0, 2
+  size: 800, 480
+  orig: 800, 480
+  offset: 0, 0
+  index: -1
+gui__foot_L
+  rotate: true
+  xy: 880, 267
+  size: 50, 31
+  orig: 50, 31
+  offset: 0, 0
+  index: -1
+gui__head
+  rotate: false
+  xy: 802, 180
+  size: 64, 60
+  orig: 64, 60
+  offset: 0, 0
+  index: -1
+gui__lowerHand_L
+  rotate: false
+  xy: 802, 134
+  size: 51, 44
+  orig: 51, 44
+  offset: 0, 0
+  index: -1
+gui__lowerHand_R
+  rotate: false
+  xy: 802, 0
+  size: 44, 37
+  orig: 44, 37
+  offset: 0, 0
+  index: -1
+gui__lowerLeg_L
+  rotate: false
+  xy: 855, 143
+  size: 30, 35
+  orig: 30, 35
+  offset: 0, 0
+  index: -1
+gui__lowerLeg_R
+  rotate: false
+  xy: 802, 85
+  size: 40, 47
+  orig: 40, 47
+  offset: 0, 0
+  index: -1
+gui__pelvic
+  rotate: false
+  xy: 907, 406
+  size: 77, 76
+  orig: 77, 76
+  offset: 0, 0
+  index: -1
+gui__torso
+  rotate: false
+  xy: 802, 319
+  size: 100, 81
+  orig: 100, 81
+  offset: 0, 0
+  index: -1
+gui__upperHand_L
+  rotate: true
+  xy: 986, 442
+  size: 40, 34
+  orig: 40, 34
+  offset: 0, 0
+  index: -1
+gui__upperHand_R
+  rotate: false
+  xy: 986, 405
+  size: 32, 35
+  orig: 32, 35
+  offset: 0, 0
+  index: -1
+gui__upperLeg_L
+  rotate: false
+  xy: 802, 39
+  size: 43, 44
+  orig: 43, 44
+  offset: 0, 0
+  index: -1
+gui__upperLeg_R
+  rotate: true
+  xy: 868, 194
+  size: 46, 30
+  orig: 46, 30
+  offset: 0, 0
+  index: -1
+gui_skull_bottom
+  rotate: false
+  xy: 802, 242
+  size: 76, 75
+  orig: 76, 75
+  offset: 0, 0
+  index: -1
+gui_skull_top
+  rotate: false
+  xy: 802, 402
+  size: 103, 80
+  orig: 103, 80
+  offset: 0, 0
+  index: -1

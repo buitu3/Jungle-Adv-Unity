@@ -1,0 +1,6 @@
+<img name="turtle.png">
+
+	<spr name="1.png" x="2" y="2" w="63" h="35" fx="1" fy="0" fw="65" fh="35">
+	<spr name="2.png" x="67" y="2" w="47" h="27" fx="16" fy="8" fw="65" fh="35">
+</img>
+

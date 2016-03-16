@@ -1,0 +1,8 @@
+<img name="fire_animation.png">
+
+	<spr name="1.png" x="2" y="2" w="41" h="72" fx="8" fy="0" fw="63" fh="72">
+	<spr name="2.png" x="2" y="76" w="41" h="64" fx="8" fy="8" fw="63" fh="72">
+	<spr name="3.png" x="45" y="74" w="41" h="68" fx="8" fy="4" fw="63" fh="72">
+	<spr name="4.png" x="45" y="2" w="41" h="70" fx="8" fy="2" fw="63" fh="72">
+</img>
+

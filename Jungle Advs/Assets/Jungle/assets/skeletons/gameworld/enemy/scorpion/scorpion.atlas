@@ -1,0 +1,111 @@
+
+skeleton.png
+size: 128,32
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+scorpion__body
+  rotate: false
+  xy: 0, 8
+  size: 48, 20
+  orig: 48, 20
+  offset: 0, 0
+  index: -1
+scorpion__cutter_down
+  rotate: false
+  xy: 101, 21
+  size: 9, 7
+  orig: 9, 7
+  offset: 0, 0
+  index: -1
+scorpion__cutter_up
+  rotate: false
+  xy: 0, 0
+  size: 9, 6
+  orig: 9, 6
+  offset: 0, 0
+  index: -1
+scorpion__fist
+  rotate: false
+  xy: 50, 13
+  size: 16, 15
+  orig: 16, 15
+  offset: 0, 0
+  index: -1
+scorpion__foot_R
+  rotate: false
+  xy: 78, 11
+  size: 7, 7
+  orig: 7, 7
+  offset: 0, 0
+  index: -1
+scorpion__lowerHand 
+  rotate: false
+  xy: 87, 21
+  size: 12, 7
+  orig: 12, 7
+  offset: 0, 0
+  index: -1
+scorpion__lowerLeg_R
+  rotate: true
+  xy: 11, 2
+  size: 4, 10
+  orig: 4, 10
+  offset: 0, 0
+  index: -1
+scorpion__tail_1
+  rotate: false
+  xy: 112, 21
+  size: 9, 7
+  orig: 9, 7
+  offset: 0, 0
+  index: -1
+scorpion__tail_2
+  rotate: true
+  xy: 85, 0
+  size: 9, 7
+  orig: 9, 7
+  offset: 0, 0
+  index: -1
+scorpion__tail_3
+  rotate: false
+  xy: 50, 0
+  size: 11, 11
+  orig: 11, 11
+  offset: 0, 0
+  index: -1
+scorpion__tail_4
+  rotate: false
+  xy: 74, 0
+  size: 9, 9
+  orig: 9, 9
+  offset: 0, 0
+  index: -1
+scorpion__tail_5
+  rotate: true
+  xy: 63, 0
+  size: 11, 9
+  orig: 11, 9
+  offset: 0, 0
+  index: -1
+scorpion__tail_6
+  rotate: false
+  xy: 68, 20
+  size: 17, 8
+  orig: 17, 8
+  offset: 0, 0
+  index: -1
+scorpion__upperHand
+  rotate: false
+  xy: 87, 12
+  size: 7, 7
+  orig: 7, 7
+  offset: 0, 0
+  index: -1
+scorpion__upperLeg_R
+  rotate: false
+  xy: 68, 13
+  size: 8, 5
+  orig: 8, 5
+  offset: 0, 0
+  index: -1

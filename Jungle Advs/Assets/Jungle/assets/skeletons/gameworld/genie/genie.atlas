@@ -1,0 +1,97 @@
+
+skeleton.png
+size: 512,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ball_dot_0
+  rotate: false
+  xy: 222, 28
+  size: 7, 7
+  orig: 7, 7
+  offset: 0, 0
+  index: -1
+ball_dot_0a
+  rotate: false
+  xy: 85, 5
+  size: 7, 7
+  orig: 7, 7
+  offset: 0, 0
+  index: -1
+ball_dot_1
+  rotate: false
+  xy: 346, 31
+  size: 7, 7
+  orig: 7, 7
+  offset: 0, 0
+  index: -1
+genie__fist_L
+  rotate: true
+  xy: 169, 0
+  size: 21, 15
+  orig: 21, 15
+  offset: 0, 0
+  index: -1
+genie__fist_R
+  rotate: false
+  xy: 378, 46
+  size: 17, 14
+  orig: 17, 14
+  offset: 0, 0
+  index: -1
+genie__head
+  rotate: true
+  xy: 169, 23
+  size: 37, 51
+  orig: 37, 51
+  offset: 0, 0
+  index: -1
+genie__lowerHand_L
+  rotate: false
+  xy: 346, 40
+  size: 30, 20
+  orig: 30, 20
+  offset: 0, 0
+  index: -1
+genie__lowerHand_R
+  rotate: true
+  xy: 271, 40
+  size: 20, 37
+  orig: 20, 37
+  offset: 0, 0
+  index: -1
+genie__tail
+  rotate: false
+  xy: 85, 14
+  size: 82, 46
+  orig: 82, 46
+  offset: 0, 0
+  index: -1
+genie__torso
+  rotate: true
+  xy: 0, 0
+  size: 60, 83
+  orig: 60, 83
+  offset: 0, 0
+  index: -1
+genie__upperHand_L
+  rotate: false
+  xy: 310, 29
+  size: 34, 31
+  orig: 34, 31
+  offset: 0, 0
+  index: -1
+genie__upperHand_R
+  rotate: true
+  xy: 222, 37
+  size: 23, 47
+  orig: 23, 47
+  offset: 0, 0
+  index: -1
+sparkle_point_0
+  rotate: false
+  xy: 186, 16
+  size: 6, 5
+  orig: 6, 5
+  offset: 0, 0
+  index: -1

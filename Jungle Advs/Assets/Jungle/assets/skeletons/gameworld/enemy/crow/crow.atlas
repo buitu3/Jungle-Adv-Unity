@@ -1,0 +1,55 @@
+
+skeleton.png
+size: 128,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+crow_head
+  rotate: false
+  xy: 39, 35
+  size: 37, 21
+  orig: 37, 21
+  offset: 0, 0
+  index: -1
+crow_leg1
+  rotate: true
+  xy: 32, 3
+  size: 26, 18
+  orig: 26, 18
+  offset: 0, 0
+  index: -1
+crow_leg2
+  rotate: true
+  xy: 32, 3
+  size: 26, 18
+  orig: 26, 18
+  offset: 0, 0
+  index: -1
+crow_tail
+  rotate: false
+  xy: 52, 22
+  size: 24, 11
+  orig: 24, 11
+  offset: 0, 0
+  index: -1
+crow_torso
+  rotate: false
+  xy: 0, 31
+  size: 37, 25
+  orig: 37, 25
+  offset: 0, 0
+  index: -1
+crow_wing_left
+  rotate: false
+  xy: 78, 33
+  size: 35, 23
+  orig: 35, 23
+  offset: 0, 0
+  index: -1
+crow_wing_right
+  rotate: false
+  xy: 0, 0
+  size: 30, 29
+  orig: 30, 29
+  offset: 0, 0
+  index: -1

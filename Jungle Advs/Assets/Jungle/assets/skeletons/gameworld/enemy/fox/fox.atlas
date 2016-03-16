@@ -1,0 +1,111 @@
+
+skeleton.png
+size: 512,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+PHOX__feet_L
+  rotate: false
+  xy: 237, 46
+  size: 28, 14
+  orig: 28, 14
+  offset: 0, 0
+  index: -1
+PHOX__feet_R
+  rotate: false
+  xy: 267, 46
+  size: 28, 14
+  orig: 28, 14
+  offset: 0, 0
+  index: -1
+PHOX__fist_L
+  rotate: true
+  xy: 169, 0
+  size: 17, 19
+  orig: 17, 19
+  offset: 0, 0
+  index: -1
+PHOX__fist_R
+  rotate: false
+  xy: 144, 0
+  size: 23, 17
+  orig: 23, 17
+  offset: 0, 0
+  index: -1
+PHOX__head
+  rotate: false
+  xy: 0, 0
+  size: 70, 60
+  orig: 70, 60
+  offset: 0, 0
+  index: -1
+PHOX__lowerHand_L
+  rotate: true
+  xy: 297, 46
+  size: 14, 23
+  orig: 14, 23
+  offset: 0, 0
+  index: -1
+PHOX__lowerHand_R
+  rotate: true
+  xy: 297, 46
+  size: 14, 23
+  orig: 14, 23
+  offset: 0, 0
+  index: -1
+PHOX__lowerLeg_L
+  rotate: true
+  xy: 190, 0
+  size: 17, 15
+  orig: 17, 15
+  offset: 0, 0
+  index: -1
+PHOX__lowerLeg_R
+  rotate: true
+  xy: 190, 0
+  size: 17, 15
+  orig: 17, 15
+  offset: 0, 0
+  index: -1
+PHOX__tail
+  rotate: false
+  xy: 72, 12
+  size: 70, 48
+  orig: 70, 48
+  offset: 0, 0
+  index: -1
+PHOX__torso
+  rotate: true
+  xy: 144, 19
+  size: 41, 63
+  orig: 41, 63
+  offset: 0, 0
+  index: -1
+PHOX__upperHand_L
+  rotate: true
+  xy: 322, 45
+  size: 15, 23
+  orig: 15, 23
+  offset: 0, 0
+  index: -1
+PHOX__upperHand_R
+  rotate: true
+  xy: 347, 45
+  size: 15, 23
+  orig: 15, 23
+  offset: 0, 0
+  index: -1
+PHOX__upperLeg_L
+  rotate: false
+  xy: 209, 32
+  size: 26, 28
+  orig: 26, 28
+  offset: 0, 0
+  index: -1
+PHOX__upperLeg_R
+  rotate: false
+  xy: 209, 32
+  size: 26, 28
+  orig: 26, 28
+  offset: 0, 0
+  index: -1

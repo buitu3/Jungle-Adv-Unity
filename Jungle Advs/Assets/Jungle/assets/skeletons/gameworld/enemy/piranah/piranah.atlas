@@ -1,0 +1,48 @@
+
+skeleton.png
+size: 128,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Piranah__hand_fin
+  rotate: false
+  xy: 69, 15
+  size: 15, 13
+  orig: 15, 13
+  offset: 0, 0
+  index: -1
+Piranah__lowerBody
+  rotate: true
+  xy: 107, 18
+  size: 42, 13
+  orig: 42, 13
+  offset: 0, 0
+  index: -1
+Piranah__mouth
+  rotate: false
+  xy: 0, 0
+  size: 27, 29
+  orig: 27, 29
+  offset: 0, 0
+  index: -1
+Piranah__tail
+  rotate: true
+  xy: 29, 2
+  size: 26, 38
+  orig: 26, 38
+  offset: 0, 0
+  index: -1
+Piranah__up_fin
+  rotate: false
+  xy: 62, 30
+  size: 43, 30
+  orig: 43, 30
+  offset: 0, 0
+  index: -1
+Piranah__upperBody
+  rotate: false
+  xy: 0, 31
+  size: 60, 29
+  orig: 60, 29
+  offset: 0, 0
+  index: -1

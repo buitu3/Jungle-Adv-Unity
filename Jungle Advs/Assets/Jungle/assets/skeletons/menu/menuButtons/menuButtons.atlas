@@ -1,0 +1,69 @@
+
+skeleton.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+gui-100
+  rotate: false
+  xy: 509, 222
+  size: 310, 82
+  orig: 310, 82
+  offset: 0, 0
+  index: -1
+gui-55
+  rotate: true
+  xy: 0, 0
+  size: 121, 381
+  orig: 121, 381
+  offset: 0, 0
+  index: -1
+gui-56
+  rotate: false
+  xy: 802, 383
+  size: 185, 87
+  orig: 185, 87
+  offset: 0, 0
+  index: -1
+gui-57
+  rotate: false
+  xy: 802, 315
+  size: 134, 66
+  orig: 134, 66
+  offset: 0, 0
+  index: -1
+gui-58
+  rotate: false
+  xy: 383, 64
+  size: 126, 57
+  orig: 126, 57
+  offset: 0, 0
+  index: -1
+gui-59
+  rotate: false
+  xy: 383, 14
+  size: 104, 48
+  orig: 104, 48
+  offset: 0, 0
+  index: -1
+gui-98
+  rotate: false
+  xy: 509, 166
+  size: 322, 54
+  orig: 322, 54
+  offset: 0, 0
+  index: -1
+gui-99
+  rotate: false
+  xy: 0, 123
+  size: 507, 181
+  orig: 507, 181
+  offset: 0, 0
+  index: -1
+jungle_adventure_menu_bg_front
+  rotate: false
+  xy: 0, 306
+  size: 800, 164
+  orig: 800, 164
+  offset: 0, 0
+  index: -1

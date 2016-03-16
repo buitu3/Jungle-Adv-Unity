@@ -1,0 +1,27 @@
+
+skeleton.png
+size: 128,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+flag_cloth
+  rotate: true
+  xy: 0, 0
+  size: 36, 29
+  orig: 36, 29
+  offset: 0, 0
+  index: -1
+flag_pole
+  rotate: true
+  xy: 0, 38
+  size: 22, 111
+  orig: 22, 111
+  offset: 0, 0
+  index: -1
+string
+  rotate: false
+  xy: 113, 56
+  size: 4, 4
+  orig: 4, 4
+  offset: 0, 0
+  index: -1

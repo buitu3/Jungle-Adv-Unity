@@ -1,0 +1,9 @@
+<img name="bat.png">
+
+	<spr name="1.png" x="2" y="46" w="70" h="84" fx="51" fy="25" fw="149" fh="149">
+	<spr name="2.png" x="74" y="46" w="57" h="90" fx="50" fy="16" fw="149" fh="149">
+	<spr name="3.png" x="2" y="2" w="138" h="42" fx="4" fy="60" fw="149" fh="149">
+	<spr name="4.png" x="2" y="132" w="45" h="83" fx="49" fy="50" fw="149" fh="149">
+	<spr name="5.png" x="142" y="2" w="72" h="63" fx="38" fy="44" fw="149" fh="149">
+</img>
+

@@ -1,0 +1,41 @@
+
+skeleton.png
+size: 128,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+snake__head
+  rotate: false
+  xy: 40, 0
+  size: 36, 32
+  orig: 36, 32
+  offset: 0, 0
+  index: -1
+snake__main
+  rotate: false
+  xy: 40, 34
+  size: 61, 26
+  orig: 61, 26
+  offset: 0, 0
+  index: -1
+snake__tail
+  rotate: false
+  xy: 78, 3
+  size: 35, 26
+  orig: 35, 26
+  offset: 0, 0
+  index: -1
+snake__tongue
+  rotate: true
+  xy: 103, 31
+  size: 29, 16
+  orig: 29, 16
+  offset: 0, 0
+  index: -1
+snake__upperBody
+  rotate: false
+  xy: 0, 4
+  size: 38, 56
+  orig: 38, 56
+  offset: 0, 0
+  index: -1

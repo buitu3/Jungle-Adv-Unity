@@ -1,0 +1,160 @@
+
+skeleton.png
+size: 512,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+matty__die_face
+  rotate: false
+  xy: 0, 14
+  size: 49, 46
+  orig: 49, 46
+  offset: 0, 0
+  index: -1
+matty__fist.L
+  rotate: false
+  xy: 82, 0
+  size: 12, 12
+  orig: 12, 12
+  offset: 0, 0
+  index: -1
+matty__fist.R
+  rotate: true
+  xy: 233, 12
+  size: 13, 8
+  orig: 13, 8
+  offset: 0, 0
+  index: -1
+matty__foot.L
+  rotate: false
+  xy: 204, 0
+  size: 20, 9
+  orig: 20, 9
+  offset: 0, 0
+  index: -1
+matty__foot.R
+  rotate: false
+  xy: 226, 0
+  size: 20, 9
+  orig: 20, 9
+  offset: 0, 0
+  index: -1
+matty__head
+  rotate: false
+  xy: 51, 14
+  size: 49, 46
+  orig: 49, 46
+  offset: 0, 0
+  index: -1
+matty__lowerArm.L
+  rotate: true
+  xy: 0, 0
+  size: 12, 20
+  orig: 12, 20
+  offset: 0, 0
+  index: -1
+matty__lowerArm.R
+  rotate: true
+  xy: 22, 0
+  size: 12, 20
+  orig: 12, 20
+  offset: 0, 0
+  index: -1
+matty__lowerLeg.L
+  rotate: false
+  xy: 331, 47
+  size: 9, 13
+  orig: 9, 13
+  offset: 0, 0
+  index: -1
+matty__lowerLeg.R
+  rotate: true
+  xy: 112, 3
+  size: 9, 13
+  orig: 9, 13
+  offset: 0, 0
+  index: -1
+matty__pant
+  rotate: false
+  xy: 225, 43
+  size: 23, 17
+  orig: 23, 17
+  offset: 0, 0
+  index: -1
+matty__scared_face
+  rotate: false
+  xy: 102, 14
+  size: 49, 46
+  orig: 49, 46
+  offset: 0, 0
+  index: -1
+matty__skateboard
+  rotate: false
+  xy: 153, 43
+  size: 70, 17
+  orig: 70, 17
+  offset: 0, 0
+  index: -1
+matty__skull
+  rotate: false
+  xy: 153, 5
+  size: 49, 36
+  orig: 49, 36
+  offset: 0, 0
+  index: -1
+matty__torso
+  rotate: false
+  xy: 282, 35
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+matty__upperArm.L
+  rotate: true
+  xy: 96, 3
+  size: 9, 14
+  orig: 9, 14
+  offset: 0, 0
+  index: -1
+matty__upperArm.R
+  rotate: false
+  xy: 233, 27
+  size: 9, 14
+  orig: 9, 14
+  offset: 0, 0
+  index: -1
+matty__upperLeg.L
+  rotate: true
+  xy: 44, 0
+  size: 12, 17
+  orig: 12, 17
+  offset: 0, 0
+  index: -1
+matty__upperLeg.R
+  rotate: true
+  xy: 63, 0
+  size: 12, 17
+  orig: 12, 17
+  offset: 0, 0
+  index: -1
+matty_frontfoot
+  rotate: false
+  xy: 309, 44
+  size: 20, 16
+  orig: 20, 16
+  offset: 0, 0
+  index: -1
+power
+  rotate: false
+  xy: 204, 11
+  size: 27, 30
+  orig: 27, 30
+  offset: 0, 0
+  index: -1
+powerup
+  rotate: true
+  xy: 250, 33
+  size: 27, 30
+  orig: 27, 30
+  offset: 0, 0
+  index: -1

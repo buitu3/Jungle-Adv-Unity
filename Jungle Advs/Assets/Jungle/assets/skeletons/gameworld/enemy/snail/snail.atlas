@@ -1,0 +1,55 @@
+
+skeleton.png
+size: 64,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+snail__eyeSupport_L
+  rotate: true
+  xy: 35, 9
+  size: 5, 8
+  orig: 5, 8
+  offset: 0, 0
+  index: -1
+snail__eyeSupport_R
+  rotate: false
+  xy: 0, 0
+  size: 8, 7
+  orig: 8, 7
+  offset: 0, 0
+  index: -1
+snail__eye_L
+  rotate: false
+  xy: 54, 32
+  size: 6, 6
+  orig: 6, 6
+  offset: 0, 0
+  index: -1
+snail__eye_R
+  rotate: false
+  xy: 10, 0
+  size: 7, 7
+  orig: 7, 7
+  offset: 0, 0
+  index: -1
+snail__neck
+  rotate: false
+  xy: 35, 16
+  size: 17, 22
+  orig: 17, 22
+  offset: 0, 0
+  index: -1
+snail__shell
+  rotate: false
+  xy: 0, 9
+  size: 33, 29
+  orig: 33, 29
+  offset: 0, 0
+  index: -1
+snail__torso
+  rotate: false
+  xy: 0, 40
+  size: 55, 20
+  orig: 55, 20
+  offset: 0, 0
+  index: -1

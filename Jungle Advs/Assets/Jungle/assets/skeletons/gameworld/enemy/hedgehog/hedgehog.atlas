@@ -1,0 +1,55 @@
+
+skeleton.png
+size: 64,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+hedgehog__ upperLeg_rear
+  rotate: false
+  xy: 0, 0
+  size: 10, 8
+  orig: 10, 8
+  offset: 0, 0
+  index: -1
+hedgehog__ear
+  rotate: false
+  xy: 48, 45
+  size: 5, 6
+  orig: 5, 6
+  offset: 0, 0
+  index: -1
+hedgehog__head
+  rotate: false
+  xy: 0, 10
+  size: 25, 17
+  orig: 25, 17
+  offset: 0, 0
+  index: -1
+hedgehog__lowerLeg_front
+  rotate: false
+  xy: 27, 20
+  size: 9, 7
+  orig: 9, 7
+  offset: 0, 0
+  index: -1
+hedgehog__lowerLeg_rear
+  rotate: false
+  xy: 48, 53
+  size: 10, 7
+  orig: 10, 7
+  offset: 0, 0
+  index: -1
+hedgehog__torso
+  rotate: false
+  xy: 0, 29
+  size: 46, 31
+  orig: 46, 31
+  offset: 0, 0
+  index: -1
+hedgehog__upperLeg_front
+  rotate: false
+  xy: 12, 0
+  size: 7, 8
+  orig: 7, 8
+  offset: 0, 0
+  index: -1

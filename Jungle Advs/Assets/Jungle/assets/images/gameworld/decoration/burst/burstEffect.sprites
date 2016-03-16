@@ -1,0 +1,8 @@
+<img name="burstEffect.png">
+
+	<spr name="1.png" x="2" y="2" w="34" h="33" fx="0" fy="2" fw="36" fh="36">
+	<spr name="2.png" x="38" y="2" w="34" h="33" fx="0" fy="2" fw="36" fh="36">
+	<spr name="3.png" x="74" y="2" w="34" h="33" fx="0" fy="2" fw="36" fh="36">
+	<spr name="4.png" x="2" y="37" w="34" h="33" fx="0" fy="2" fw="36" fh="36">
+</img>
+

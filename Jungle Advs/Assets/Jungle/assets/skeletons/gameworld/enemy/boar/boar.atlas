@@ -1,0 +1,146 @@
+
+skeleton.png
+size: 256,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: false
+  xy: 143, 74
+  size: 21, 13
+  orig: 21, 13
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 229, 111
+  size: 21, 13
+  orig: 21, 13
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 143, 59
+  size: 21, 13
+  orig: 21, 13
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 179, 95
+  size: 21, 13
+  orig: 21, 13
+  offset: 0, 0
+  index: -1
+5
+  rotate: true
+  xy: 102, 31
+  size: 21, 13
+  orig: 21, 13
+  offset: 0, 0
+  index: -1
+BULL__front_foot
+  rotate: false
+  xy: 117, 24
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+BULL__front_foot_backside
+  rotate: false
+  xy: 150, 45
+  size: 16, 12
+  orig: 16, 12
+  offset: 0, 0
+  index: -1
+BULL__front_lower_leg
+  rotate: true
+  xy: 179, 110
+  size: 14, 23
+  orig: 14, 23
+  offset: 0, 0
+  index: -1
+BULL__front_lower_leg_backside
+  rotate: true
+  xy: 204, 111
+  size: 13, 23
+  orig: 13, 23
+  offset: 0, 0
+  index: -1
+BULL__front_upper_leg
+  rotate: true
+  xy: 73, 0
+  size: 17, 30
+  orig: 17, 30
+  offset: 0, 0
+  index: -1
+BULL__front_upper_leg_backside
+  rotate: false
+  xy: 107, 59
+  size: 22, 28
+  orig: 22, 28
+  offset: 0, 0
+  index: -1
+BULL__head
+  rotate: true
+  xy: 0, 5
+  size: 47, 71
+  orig: 47, 71
+  offset: 0, 0
+  index: -1
+BULL__rear_foot
+  rotate: false
+  xy: 132, 44
+  size: 16, 13
+  orig: 16, 13
+  offset: 0, 0
+  index: -1
+BULL__rear_foot_backside
+  rotate: true
+  xy: 117, 40
+  size: 17, 13
+  orig: 17, 13
+  offset: 0, 0
+  index: -1
+BULL__rear_lower_leg
+  rotate: false
+  xy: 131, 60
+  size: 10, 27
+  orig: 10, 27
+  offset: 0, 0
+  index: -1
+BULL__rear_lower_leg_backside
+  rotate: true
+  xy: 140, 89
+  size: 12, 27
+  orig: 12, 27
+  offset: 0, 0
+  index: -1
+BULL__rear_upper_leg
+  rotate: false
+  xy: 107, 89
+  size: 31, 35
+  orig: 31, 35
+  offset: 0, 0
+  index: -1
+BULL__rear_upper_leg_backside
+  rotate: false
+  xy: 73, 19
+  size: 27, 33
+  orig: 27, 33
+  offset: 0, 0
+  index: -1
+BULL__tail
+  rotate: false
+  xy: 140, 103
+  size: 37, 21
+  orig: 37, 21
+  offset: 0, 0
+  index: -1
+BULL__torso
+  rotate: false
+  xy: 0, 54
+  size: 105, 70
+  orig: 105, 70
+  offset: 0, 0
+  index: -1

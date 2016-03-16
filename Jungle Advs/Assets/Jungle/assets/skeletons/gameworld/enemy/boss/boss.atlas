@@ -1,0 +1,202 @@
+
+skeleton.png
+size: 1024,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BOSS_RHEO/Boss_beo
+  rotate: false
+  xy: 413, 60
+  size: 80, 66
+  orig: 80, 66
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/Boss_creo
+  rotate: false
+  xy: 724, 66
+  size: 71, 60
+  orig: 71, 60
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/Boss_deo
+  rotate: false
+  xy: 577, 56
+  size: 76, 70
+  orig: 76, 70
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/Boss_geo
+  rotate: true
+  xy: 495, 2
+  size: 58, 71
+  orig: 58, 71
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/Boss_leo
+  rotate: false
+  xy: 2, 24
+  size: 103, 102
+  orig: 103, 102
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/Boss_leop
+  rotate: false
+  xy: 655, 58
+  size: 67, 68
+  orig: 67, 68
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/Boss_rheo__belt
+  rotate: false
+  xy: 2, 4
+  size: 43, 18
+  orig: 43, 18
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/Boss_rheo__die_face
+  rotate: false
+  xy: 870, 67
+  size: 60, 59
+  orig: 60, 59
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/Boss_rheo__feet_L
+  rotate: true
+  xy: 866, 20
+  size: 44, 22
+  orig: 44, 22
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/Boss_rheo__feet_R
+  rotate: true
+  xy: 866, 20
+  size: 44, 22
+  orig: 44, 22
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/Boss_rheo__fist_L
+  rotate: true
+  xy: 628, 8
+  size: 46, 42
+  orig: 46, 42
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/Boss_rheo__fist_R
+  rotate: false
+  xy: 672, 14
+  size: 46, 42
+  orig: 46, 42
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/Boss_rheo__head
+  rotate: false
+  xy: 932, 67
+  size: 60, 59
+  orig: 60, 59
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/Boss_rheo__lowerArm_R
+  rotate: true
+  xy: 276, 9
+  size: 33, 60
+  orig: 33, 60
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/Boss_rheo__lowerHand_L
+  rotate: false
+  xy: 457, 4
+  size: 31, 54
+  orig: 31, 54
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/Boss_rheo__lowerLeg_L
+  rotate: false
+  xy: 212, 2
+  size: 30, 40
+  orig: 30, 40
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/Boss_rheo__lowerLeg_R
+  rotate: false
+  xy: 244, 2
+  size: 30, 40
+  orig: 30, 40
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/Boss_rheo__torso
+  rotate: true
+  xy: 212, 44
+  size: 82, 121
+  orig: 82, 121
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/Boss_rheo__upperArm_R
+  rotate: true
+  xy: 568, 10
+  size: 44, 58
+  orig: 44, 58
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/Boss_rheo__upperHand_L
+  rotate: false
+  xy: 413, 2
+  size: 42, 56
+  orig: 42, 56
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/Boss_rheo__upperLeg_L
+  rotate: false
+  xy: 994, 81
+  size: 27, 45
+  orig: 27, 45
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/Boss_rheo__upperLeg_R
+  rotate: true
+  xy: 338, 12
+  size: 41, 59
+  orig: 41, 59
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/beo_die
+  rotate: false
+  xy: 495, 62
+  size: 80, 64
+  orig: 80, 64
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/crocodile_die
+  rotate: false
+  xy: 797, 66
+  size: 71, 60
+  orig: 71, 60
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/doggy_die
+  rotate: false
+  xy: 335, 55
+  size: 76, 71
+  orig: 76, 71
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/gorilla_die
+  rotate: true
+  xy: 793, 6
+  size: 58, 71
+  orig: 58, 71
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/leop_die
+  rotate: false
+  xy: 724, 2
+  size: 67, 62
+  orig: 67, 62
+  offset: 0, 0
+  index: -1
+BOSS_RHEO/lion_die
+  rotate: false
+  xy: 107, 24
+  size: 103, 102
+  orig: 103, 102
+  offset: 0, 0
+  index: -1
