@@ -13,7 +13,8 @@ public class PlayerGroundCheck : MonoBehaviour {
             playerControl.isDoubleJumping = false;
             playerControl.isFalling = false;
             playerControl.isGrounded = true;
-            
+
+            playerControl.playerAnimator.SetBool("Grounded", true);
             print("grounded");
         }
     }
@@ -24,6 +25,8 @@ public class PlayerGroundCheck : MonoBehaviour {
         {
             playerControl.isGrounded = false;
             playerControl.isFalling = true;
+
+            playerControl.playerAnimator.SetBool("Grounded", false);
         }
     }
 }

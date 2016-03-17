@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour {
 
     private Transform playerTransform;
     private Rigidbody2D playerRigidbody;
+    [HideInInspector]
+    public Animator playerAnimator;
 
     [HideInInspector]
     public bool isGrounded = true;
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
         playerTransform = GetComponent<Transform>();
         playerRigidbody = GetComponent<Rigidbody2D>();
+        playerAnimator = GetComponent<Animator>();
 	}
 	
 	void Update () {
@@ -70,6 +73,9 @@ public class PlayerController : MonoBehaviour {
         movement.Set(playerWalkSpd * h * Time.deltaTime, 0f);
         //playerTransform.Translate(movement);
         playerRigidbody.velocity = new Vector2(playerWalkSpd * h * Time.deltaTime, playerRigidbody.velocity.y);
+
+        //print(playerRigidbody.velocity.x);
+        playerAnimator.SetFloat("speed", Mathf.Abs(playerRigidbody.velocity.x));
     }
 
     void Jump()
@@ -77,6 +83,9 @@ public class PlayerController : MonoBehaviour {
         playerRigidbody.AddForce(new Vector2(0f, jumpForce));
         isGrounded = false;
         isJumping = true;
+
+        playerAnimator.SetTrigger("Jump");
+        playerAnimator.SetBool("Grounded", false);
     }      
 
     void doubleJump()
@@ -85,6 +94,8 @@ public class PlayerController : MonoBehaviour {
         playerRigidbody.AddForce(new Vector2(0f, doubleJumpForce));
         isJumping = false;
         isDoubleJumping = true;
+
+        playerAnimator.SetTrigger("DoubleJump");
     }
 
     private void Flip()
