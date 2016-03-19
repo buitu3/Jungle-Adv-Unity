@@ -1,0 +1,137 @@
+fileFormatVersion: 2
+guid: d237f9a2b9f2e584b9c50197db85010f
+timeCreated: 1458266517
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: skeleton_0
+    21300002: skeleton_1
+    21300004: skeleton_2
+    21300006: skeleton_3
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -2
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: skeleton_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 157
+        width: 180
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 33.5}
+        - {x: -90, y: 33.5}
+        - {x: -90, y: 1.5}
+        - {x: -83, y: -33.5}
+        - {x: 86, y: -33.5}
+        - {x: 90, y: -31.5}
+        - {x: 90, y: 26.5}
+        - {x: 85, y: 27.5}
+    - name: skeleton_1
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 208
+        width: 127
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -63.5, y: 24}
+        - {x: -63.5, y: -9}
+        - {x: -60.5, y: -24}
+        - {x: 62.5, y: -24}
+        - {x: 63.5, y: -23}
+        - {x: 63.5, y: 20}
+        - {x: 50.5, y: 24}
+    - name: skeleton_2
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 158
+        width: 127
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -63.5, y: 24}
+        - {x: -63.5, y: -10}
+        - {x: -55.5, y: -24}
+        - {x: 62.5, y: -24}
+        - {x: 63.5, y: -23}
+        - {x: 63.5, y: 22}
+        - {x: 34.5, y: 24}
+    - name: skeleton_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4
+        width: 477
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 25.5, y: 19.5}
+        - {x: -96.5, y: 75.5}
+        - {x: -185.5, y: 75.5}
+        - {x: -238.5, y: 32.5}
+        - {x: -238.5, y: -46.5}
+        - {x: -175.5, y: -75.5}
+        - {x: 13.5, y: -75.5}
+        - {x: 224.5, y: -51.5}
+        - {x: 238.5, y: -40.5}
+        - {x: 238.5, y: 4.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

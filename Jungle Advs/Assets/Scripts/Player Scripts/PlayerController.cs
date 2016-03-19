@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour {
     public float jumpForce;
     public float doubleJumpForce;
 
+    public GameObject stone;
+    public Transform stoneThrowPos;
+
     [HideInInspector]
     public Transform playerTransform;
     [HideInInspector]
@@ -27,6 +30,8 @@ public class PlayerController : MonoBehaviour {
     private bool isFacingLeft = false;
     [HideInInspector]
     public bool isFalling = false;
+    private bool moveLeftBtnPressed = false;
+    private bool moveRightBtnPressed = false;
 
     //public enum playerStates
     //{
@@ -50,10 +55,13 @@ public class PlayerController : MonoBehaviour {
         playerTransform = GetComponent<Transform>();
         playerRigidbody = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
+
+        StartCoroutine(checkMoveBtnPressed());
 	}
-	
-	void Update ()
+
+    void Update()
     {
+        print(moveRightBtnPressed);
         float h = Input.GetAxis("Horizontal");
 
         if (h != 0 && canActive)
@@ -68,12 +76,20 @@ public class PlayerController : MonoBehaviour {
             if (isGrounded)
             {
                 Jump();
-                print("jumped");
             }
             else if (isJumping && !isFalling)
             {
                 doubleJump();
-                print("doublejumped");
+            }
+        }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            if (GameController.Instance.stoneCount > 0 && canActive)
+            {
+                GameController.Instance.stoneCount--;
+                GameController.Instance.updateStoneText();
+                throwStone();
             }
         }
 
@@ -119,10 +135,18 @@ public class PlayerController : MonoBehaviour {
         playerAnimator.SetTrigger("DoubleJump");
     }
 
+    public void throwStone()
+    {
+        
+        Instantiate(stone, stoneThrowPos.position, Quaternion.identity);
+
+    }
+
     private void Flip()
     {
         isFacingLeft = !isFacingLeft;
-        playerTransform.localScale = new Vector3(playerTransform.localScale.x * -1, playerTransform.localScale.y, playerTransform.localScale.z);
+        //playerTransform.localScale = new Vector3(playerTransform.localScale.x * -1, playerTransform.localScale.y, playerTransform.localScale.z);
+        playerTransform.rotation = Quaternion.LookRotation(-playerTransform.forward, Vector3.up);
     }
 
     public IEnumerator movePlayerToTheEnd()
@@ -134,16 +158,59 @@ public class PlayerController : MonoBehaviour {
         }  
     }
 
-    //public IEnumerator knockPlayerBack()
-    //{
-    //    canActive = false;
-    //    Vector2 bounceDir = (playerTransform.position - transform.position).normalized;
-    //    print(bounceDir);
-    //    //playerRigidbody.velocity = new Vector2(0f, playerRigidbody.velocity.y);
-    //    //playerRigidbody.AddForce(new Vector2(bounceDir.x * 300f, 0f), ForceMode2D.Impulse);
-    //    playerRigidbody.AddForce(bounceDir * 100, ForceMode2D.Impulse);
-    //    yield return new WaitForSeconds(1f);
-    //    canActive = true;
-        
-    //}
+    // Check Moving Btn State and call move method accordingly
+    public void onBtnMoveLeftStateChanged(bool state)
+    {
+        moveLeftBtnPressed = state;
+    }
+    public void onBtnMoveRightStateChanged(bool state)
+    {
+        moveRightBtnPressed = state;
+    }
+    IEnumerator checkMoveBtnPressed()
+    {
+        while (true)
+        {
+            if (moveLeftBtnPressed)
+            {
+                Move(-1f);
+            }
+            else if (moveRightBtnPressed)
+            {
+                Move(1f);
+            }
+            else
+            {
+                Move(0f);
+            }
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
+    // Make player jump when button Jump is pressed
+    public void onBtnJumpPressed()
+    {
+        if (canActive && Time.timeScale != 0)
+        {
+            if (isGrounded)
+            {
+                Jump();
+            }
+            else if (isJumping && !isFalling)
+            {
+                doubleJump();
+            }
+        }
+    }
+
+    // Make Player throw stone when button Fire is pressed
+    public void onBtnFirePressed()
+    {
+        if (GameController.Instance.stoneCount > 0 && canActive)
+        {
+            GameController.Instance.stoneCount--;
+            GameController.Instance.updateStoneText();
+            throwStone();
+        }
+    }
 }

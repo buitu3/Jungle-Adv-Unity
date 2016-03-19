@@ -11,6 +11,7 @@ public class EndgameChecker : MonoBehaviour {
             AutoCamEdited.Instance.enabled = false;
             PlayerController.Instance.canActive = false;
             StartCoroutine(PlayerController.Instance.movePlayerToTheEnd());
+            StartCoroutine(GameController.Instance.completeGame());
         }
 
     }

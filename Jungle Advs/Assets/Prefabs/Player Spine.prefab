@@ -222,10 +222,13 @@ MonoBehaviour:
   playerWalkSpd: 200
   jumpForce: 450
   doubleJumpForce: 400
+  playerTransform: {fileID: 0}
+  playerRigidbody: {fileID: 0}
   playerAnimator: {fileID: 0}
   isGrounded: 1
   isJumping: 0
   isDoubleJumping: 0
+  canActive: 1
   isFalling: 0
 --- !u!1001 &100100000
 Prefab:
