@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Weapon
   - Food
+  - Projectile
+  - Box
   layers:
   - Default
   - TransparentFX
@@ -20,8 +22,8 @@ TagManager:
   - Player
   - Platform
   - Enemy
-  - 
-  - 
+  - Groundcheck
+  - Projectile
   - 
   - 
   - 

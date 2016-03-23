@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
     public float playerWalkSpd;
     public float jumpForce;
     public float doubleJumpForce;
+    public float fireRate = 0.5f;
 
     public GameObject stone;
     public Transform stoneThrowPos;
@@ -32,6 +33,8 @@ public class PlayerController : MonoBehaviour {
     public bool isFalling = false;
     private bool moveLeftBtnPressed = false;
     private bool moveRightBtnPressed = false;
+
+    private float nextFire;
 
     //public enum playerStates
     //{
@@ -61,7 +64,6 @@ public class PlayerController : MonoBehaviour {
 
     void Update()
     {
-        print(moveRightBtnPressed);
         float h = Input.GetAxis("Horizontal");
 
         if (h != 0 && canActive)
@@ -83,20 +85,22 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire2"))
         {
-            if (GameController.Instance.stoneCount > 0 && canActive)
+            if (GameController.Instance.stoneCount > 0 && canActive && Time.time > nextFire)
             {
                 GameController.Instance.stoneCount--;
                 GameController.Instance.updateStoneText();
-                throwStone();
+                StartCoroutine(throwStone());
+
+                nextFire = Time.time + fireRate;
             }
         }
 
         // Ressurect Player if fall down
         if (playerTransform.position.y < -20)
         {
-            playerTransform.position = GameController.Instance.currentSpawnPoint.position;
+            reSpawn();
         }
 	}
 
@@ -120,6 +124,7 @@ public class PlayerController : MonoBehaviour {
         playerRigidbody.AddForce(new Vector2(0f, jumpForce));
         isGrounded = false;
         isJumping = true;
+        isDoubleJumping = false;
 
         playerAnimator.SetTrigger("Jump");
         playerAnimator.SetBool("Grounded", false);
@@ -135,11 +140,23 @@ public class PlayerController : MonoBehaviour {
         playerAnimator.SetTrigger("DoubleJump");
     }
 
-    public void throwStone()
+    public IEnumerator throwStone()
     {
-        
-        Instantiate(stone, stoneThrowPos.position, Quaternion.identity);
+        if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Stand"))
+        {
+            playerAnimator.SetTrigger("ThrowStone");
+            yield return new WaitForSeconds(0.4f);
+            Instantiate(stone, stoneThrowPos.position, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(stone, stoneThrowPos.position, Quaternion.identity);
+        }
+    }
 
+    void reSpawn()
+    {
+        playerTransform.position = GameController.Instance.currentSpawnPoint.position;
     }
 
     private void Flip()
@@ -158,6 +175,8 @@ public class PlayerController : MonoBehaviour {
         }  
     }
 
+    #region Mobile buttons control methods
+
     // Check Moving Btn State and call move method accordingly
     public void onBtnMoveLeftStateChanged(bool state)
     {
@@ -171,17 +190,20 @@ public class PlayerController : MonoBehaviour {
     {
         while (true)
         {
-            if (moveLeftBtnPressed)
+            if (canActive)
             {
-                Move(-1f);
-            }
-            else if (moveRightBtnPressed)
-            {
-                Move(1f);
-            }
-            else
-            {
-                Move(0f);
+                if (moveLeftBtnPressed)
+                {
+                    Move(-1f);
+                }
+                else if (moveRightBtnPressed)
+                {
+                    Move(1f);
+                }
+                else
+                {
+                    Move(0f);
+                }
             }
             yield return new WaitForEndOfFrame();
         }
@@ -206,11 +228,13 @@ public class PlayerController : MonoBehaviour {
     // Make Player throw stone when button Fire is pressed
     public void onBtnFirePressed()
     {
-        if (GameController.Instance.stoneCount > 0 && canActive)
+        if (GameController.Instance.stoneCount > 0 && canActive && Time.time > nextFire)
         {
             GameController.Instance.stoneCount--;
             GameController.Instance.updateStoneText();
-            throwStone();
-        }
+            StartCoroutine(throwStone());
+
+            nextFire = Time.time + fireRate;        }
     }
+    #endregion
 }

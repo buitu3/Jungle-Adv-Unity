@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 467382}
   - 61: {fileID: 6150486}
   - 114: {fileID: 11408522}
+  - 111: {fileID: 11194996}
   m_Layer: 9
   m_Name: Stone Pickup
   m_TagString: Weapon
@@ -130,6 +131,21 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.46, y: 0.47}
+--- !u!111 &11194996
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 116580}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 8c3b19d0b7213a0419bf6e865557e235, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 8c3b19d0b7213a0419bf6e865557e235, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &11408522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -141,6 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f0da90f21eeff4d9bfc3c366d53024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  localPosition: {x: 0, y: 0, z: 0}
 --- !u!212 &21202476
 SpriteRenderer:
   m_ObjectHideFlags: 1

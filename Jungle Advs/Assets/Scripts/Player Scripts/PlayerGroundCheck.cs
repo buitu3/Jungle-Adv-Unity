@@ -22,6 +22,7 @@ public class PlayerGroundCheck : MonoBehaviour {
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Platform" && !playerControl.isJumping)
+            //if (other.tag == "Platform")
         {
             playerControl.isGrounded = false;
             playerControl.isFalling = true;

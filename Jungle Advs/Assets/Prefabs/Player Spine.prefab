@@ -40,6 +40,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &178650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 415694}
+  m_Layer: 8
+  m_Name: Throw Stone Pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &415464
 Transform:
   m_ObjectHideFlags: 1
@@ -47,12 +62,25 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141926}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.78, y: 0.39, z: 0}
+  m_LocalPosition: {x: -4.78, y: 0.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 433866}
+  - {fileID: 415694}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &415694
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178650}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.44, y: 0.12, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 415464}
+  m_RootOrder: 1
 --- !u!4 &433866
 Transform:
   m_ObjectHideFlags: 1
@@ -90,7 +118,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
 --- !u!33 &3388648
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -126,9 +154,9 @@ CircleCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0.09}
+  m_Offset: {x: 0, y: 0.02}
   serializedVersion: 2
-  m_Radius: 0.39
+  m_Radius: 0.54
 --- !u!61 &6121632
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -140,9 +168,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0.37}
+  m_Offset: {x: 0, y: 0.67}
   serializedVersion: 2
-  m_Size: {x: 0.79, y: 1.14}
+  m_Size: {x: 1.01, y: 1.59}
 --- !u!61 &6175476
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -154,9 +182,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_Offset: {x: -0.03, y: -0.29}
+  m_Offset: {x: -0.03, y: -0.54}
   serializedVersion: 2
-  m_Size: {x: 0.49, y: 0.16}
+  m_Size: {x: 0.64, y: 0.16}
 --- !u!95 &9580092
 Animator:
   serializedVersion: 3
@@ -222,6 +250,8 @@ MonoBehaviour:
   playerWalkSpd: 200
   jumpForce: 450
   doubleJumpForce: 400
+  stone: {fileID: 148458, guid: a28b642e6f56b784db186d1aee2cc36c, type: 2}
+  stoneThrowPos: {fileID: 415694}
   playerTransform: {fileID: 0}
   playerRigidbody: {fileID: 0}
   playerAnimator: {fileID: 0}
