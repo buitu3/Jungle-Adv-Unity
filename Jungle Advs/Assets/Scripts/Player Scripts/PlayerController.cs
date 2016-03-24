@@ -58,20 +58,10 @@ public class PlayerController : MonoBehaviour {
         playerTransform = GetComponent<Transform>();
         playerRigidbody = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
-
-        StartCoroutine(checkMoveBtnPressed());
 	}
 
     void Update()
     {
-        float h = Input.GetAxis("Horizontal");
-
-        if (h != 0 && canActive)
-        {
-            Move(h);
-        }
-
-        playerAnimator.SetFloat("vspeed", playerRigidbody.velocity.y);
 
         if (Input.GetButtonDown("Jump") && canActive)
         {
@@ -104,6 +94,20 @@ public class PlayerController : MonoBehaviour {
         }
 	}
 
+    void FixedUpdate()
+    {
+        playerAnimator.SetFloat("vspeed", playerRigidbody.velocity.y);
+
+        float h = Input.GetAxis("Horizontal");
+
+        if (h != 0 && canActive)
+        {
+            Move(h);
+        }
+
+        checkMoveBtnPressed();
+    }
+
     void Move(float h)
     {
         if ((h > 0 && isFacingLeft) || (h < 0 && !isFacingLeft))
@@ -113,10 +117,13 @@ public class PlayerController : MonoBehaviour {
 
         movement.Set(playerWalkSpd * h * Time.deltaTime, 0f);
         //playerTransform.Translate(movement);
-        playerRigidbody.velocity = new Vector2(playerWalkSpd * h * Time.deltaTime, playerRigidbody.velocity.y);
+        playerRigidbody.velocity = new Vector2(playerWalkSpd * h, playerRigidbody.velocity.y);
 
         //print(playerRigidbody.velocity.x);
-        playerAnimator.SetFloat("speed", Mathf.Abs(playerRigidbody.velocity.x));
+        //playerAnimator.SetFloat("speed", Mathf.Abs(playerRigidbody.velocity.x));
+        playerAnimator.SetFloat("speed", Mathf.Abs(h));
+
+        BackGroundScroller.current.Go(h);
     }
 
     void Jump()
@@ -140,7 +147,7 @@ public class PlayerController : MonoBehaviour {
         playerAnimator.SetTrigger("DoubleJump");
     }
 
-    public IEnumerator throwStone()
+    private IEnumerator throwStone()
     {
         if (playerAnimator.GetCurrentAnimatorStateInfo(0).IsName("Stand"))
         {
@@ -186,26 +193,22 @@ public class PlayerController : MonoBehaviour {
     {
         moveRightBtnPressed = state;
     }
-    IEnumerator checkMoveBtnPressed()
+    void checkMoveBtnPressed()
     {
-        while (true)
+        if (canActive)
         {
-            if (canActive)
+            if (moveLeftBtnPressed)
             {
-                if (moveLeftBtnPressed)
-                {
-                    Move(-1f);
-                }
-                else if (moveRightBtnPressed)
-                {
-                    Move(1f);
-                }
-                else
-                {
-                    Move(0f);
-                }
+                Move(-1f);
             }
-            yield return new WaitForEndOfFrame();
+            else if (moveRightBtnPressed)
+            {
+                Move(1f);
+            }
+            else
+            {
+                Move(0f);
+            }
         }
     }
 

@@ -18,7 +18,6 @@ public class EnemyController : MonoBehaviour {
     void Update()
     {
         movement.Set(enemySpd * Time.deltaTime * enemyTransform.right.x, enemyRigidbody.velocity.y);
-        //enemyRigidbody.MovePosition(transform.position + movement);
         enemyRigidbody.velocity = (movement);
     }
 

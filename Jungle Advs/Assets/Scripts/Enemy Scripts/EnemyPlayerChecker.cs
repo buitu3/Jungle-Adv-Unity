@@ -3,24 +3,9 @@ using System.Collections;
 
 public class EnemyPlayerChecker : MonoBehaviour {
 
-    //void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    if (other.tag == "Player" && PlayerController.Instance.isGrounded)
-    //    {
-    //        //PlayerController.Instance.canActive = false;
-    //        //Vector2 bounceDir = (other.transform.position - transform.position).normalized;
-    //        //other.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, other.GetComponent<Rigidbody2D>().velocity.y);
-    //        //other.GetComponent<Rigidbody2D>().AddForce(new Vector2(bounceDir.x * 300f, 0f));
-    //        //PlayerController.Instance.canActive = true;
-    //        StartCoroutine(knockPlayerBack());
-    //    }
-
-    //}
-
-    void OnCollisionEnter2D(Collision2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        print("aaa");
-        if (other.gameObject.tag == "Player" && PlayerController.Instance.isGrounded)
+        if (other.tag == "Player" && PlayerController.Instance.isGrounded)
         {
             //PlayerController.Instance.canActive = false;
             //Vector2 bounceDir = (other.transform.position - transform.position).normalized;
@@ -31,6 +16,21 @@ public class EnemyPlayerChecker : MonoBehaviour {
         }
 
     }
+
+    //void OnCollisionEnter2D(Collision2D other)
+    //{
+    //    print("aaa");
+    //    if (other.gameObject.tag == "Player" && PlayerController.Instance.isGrounded)
+    //    {
+    //        //PlayerController.Instance.canActive = false;
+    //        //Vector2 bounceDir = (other.transform.position - transform.position).normalized;
+    //        //other.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, other.GetComponent<Rigidbody2D>().velocity.y);
+    //        //other.GetComponent<Rigidbody2D>().AddForce(new Vector2(bounceDir.x * 300f, 0f));
+    //        //PlayerController.Instance.canActive = true;
+    //        StartCoroutine(knockPlayerBack());
+    //    }
+
+    //}
 
     public IEnumerator knockPlayerBack()
     {
