@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour {
     public Text lifeText;
     public Text fruitText;
     public Text stoneText;
+    public Slider healthBar;
 
     public GameObject pauseGamePanel;
     public GameObject completeGamePanel;
@@ -32,7 +33,10 @@ public class GameController : MonoBehaviour {
 
     void Start()
     {
+        // Init UI stats
         updateLifeCount();
+        healthBar.maxValue = PlayerController.Instance.health;
+        healthBar.value = PlayerController.Instance.health;
     }
 
     public void pauseGame()
@@ -49,16 +53,25 @@ public class GameController : MonoBehaviour {
 
     public void restartGame()
     {
-        //SceneManager.LoadScene("Level1 Scene");
-        SceneManager.LoadScene("Level" + levelNumber + " Scene");
+        SceneManager.LoadScene("Level" + levelNumber + " " + worldNumber  + " Scene");
         Time.timeScale = 1f;
     }
 
-    public IEnumerator completeGame()
+    public void nextGame()
     {
-        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene("Level" + (levelNumber + 1) + " " + worldNumber + " Scene");
+        Time.timeScale = 1f;
+    }
+
+    public void completeGame()
+    {
         completeGamePanel.SetActive(true);
         Time.timeScale = 0f;
+    }
+
+    public void gameOver()
+    {
+        print("died");
     }
 
     public void updateLifeCount()
@@ -74,5 +87,10 @@ public class GameController : MonoBehaviour {
     public void updateStoneText()
     {
         stoneText.text = stoneCount.ToString();
+    }
+
+    public void updateHealthBar()
+    {
+        healthBar.value = PlayerController.Instance.health;
     }
 }

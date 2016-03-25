@@ -251,6 +251,7 @@ MonoBehaviour:
   jumpForce: 450
   doubleJumpForce: 400
   fireRate: 0.5
+  health: 5
   stone: {fileID: 148458, guid: a28b642e6f56b784db186d1aee2cc36c, type: 2}
   stoneThrowPos: {fileID: 415694}
   playerTransform: {fileID: 0}
@@ -260,6 +261,7 @@ MonoBehaviour:
   isJumping: 0
   isDoubleJumping: 0
   canActive: 1
+  isFacingLeft: 0
   isFalling: 0
 --- !u!1001 &100100000
 Prefab:

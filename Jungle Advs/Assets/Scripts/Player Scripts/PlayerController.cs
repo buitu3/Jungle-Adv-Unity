@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     public float jumpForce;
     public float doubleJumpForce;
     public float fireRate = 0.5f;
+    public int health = 5;
 
     public GameObject stone;
     public Transform stoneThrowPos;
@@ -28,7 +29,7 @@ public class PlayerController : MonoBehaviour {
     public bool isDoubleJumping = false;
     [HideInInspector]
     public bool canActive = true;
-    private bool isFacingLeft = false;
+    public bool isFacingLeft = false;
     [HideInInspector]
     public bool isFalling = false;
     private bool moveLeftBtnPressed = false;
@@ -95,9 +96,7 @@ public class PlayerController : MonoBehaviour {
 	}
 
     void FixedUpdate()
-    {
-        playerAnimator.SetFloat("vspeed", playerRigidbody.velocity.y);
-
+    {        
         float h = Input.GetAxis("Horizontal");
 
         if (h != 0 && canActive)
@@ -106,6 +105,10 @@ public class PlayerController : MonoBehaviour {
         }
 
         checkMoveBtnPressed();
+
+        playerAnimator.SetFloat("speed", Mathf.Abs(playerRigidbody.velocity.x));
+
+        playerAnimator.SetFloat("vspeed", playerRigidbody.velocity.y);
     }
 
     void Move(float h)
@@ -113,6 +116,13 @@ public class PlayerController : MonoBehaviour {
         if ((h > 0 && isFacingLeft) || (h < 0 && !isFacingLeft))
         {
             Flip();
+
+        }
+
+        // Scrolling BG according to Player movement
+        if (!Mathf.Approximately(playerRigidbody.velocity.x, 0.0f))
+        {
+            BackGroundScroller.current.Go(h);
         }
 
         movement.Set(playerWalkSpd * h * Time.deltaTime, 0f);
@@ -121,9 +131,7 @@ public class PlayerController : MonoBehaviour {
 
         //print(playerRigidbody.velocity.x);
         //playerAnimator.SetFloat("speed", Mathf.Abs(playerRigidbody.velocity.x));
-        playerAnimator.SetFloat("speed", Mathf.Abs(h));
-
-        BackGroundScroller.current.Go(h);
+        //playerAnimator.SetFloat("speed", Mathf.Abs(h));
     }
 
     void Jump()
@@ -177,8 +185,8 @@ public class PlayerController : MonoBehaviour {
     {
         while (true)
         {
-            playerRigidbody.velocity = new Vector2(playerWalkSpd * Time.deltaTime, playerRigidbody.velocity.y);
-            yield return new WaitForEndOfFrame();
+            playerRigidbody.velocity = new Vector2(playerWalkSpd, playerRigidbody.velocity.y);
+            yield return new WaitForFixedUpdate();
         }  
     }
 
@@ -187,7 +195,7 @@ public class PlayerController : MonoBehaviour {
     // Check Moving Btn State and call move method accordingly
     public void onBtnMoveLeftStateChanged(bool state)
     {
-        moveLeftBtnPressed = state;
+        moveLeftBtnPressed = state;       
     }
     public void onBtnMoveRightStateChanged(bool state)
     {
@@ -210,6 +218,7 @@ public class PlayerController : MonoBehaviour {
                 Move(0f);
             }
         }
+
     }
 
     // Make player jump when button Jump is pressed
