@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour {
     public bool isDoubleJumping = false;
     [HideInInspector]
     public bool canActive = true;
+    [HideInInspector]
     public bool isFacingLeft = false;
     [HideInInspector]
     public bool isFalling = false;
@@ -63,7 +64,6 @@ public class PlayerController : MonoBehaviour {
 
     void Update()
     {
-
         if (Input.GetButtonDown("Jump") && canActive)
         {
             if (isGrounded)
@@ -88,11 +88,11 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-        // Ressurect Player if fall down
-        if (playerTransform.position.y < -20)
-        {
-            reSpawn();
-        }
+        //// Ressurect Player if fall down
+        //if (playerTransform.position.y < -20)
+        //{
+        //    reSpawn();
+        //}
 	}
 
     void FixedUpdate()
@@ -109,6 +109,22 @@ public class PlayerController : MonoBehaviour {
         playerAnimator.SetFloat("speed", Mathf.Abs(playerRigidbody.velocity.x));
 
         playerAnimator.SetFloat("vspeed", playerRigidbody.velocity.y);
+
+        // Respawn if Player fall into the deep
+        if (playerTransform.position.y < -20)
+        {
+            if (GameController.Instance.lifeCount > 0)
+            {
+                GameController.Instance.lifeCount -= 1;
+            }
+            else
+            {
+                GameController.Instance.lifeCount = 0;
+            }
+            GameController.Instance.updateLifeCount();
+
+            PlayerController.Instance.reSpawn();
+        }
     }
 
     void Move(float h)
@@ -123,6 +139,10 @@ public class PlayerController : MonoBehaviour {
         if (!Mathf.Approximately(playerRigidbody.velocity.x, 0.0f))
         {
             BackGroundScroller.current.Go(h);
+        }
+        else
+        {
+            BackGroundScroller.current.Go(0f);
         }
 
         movement.Set(playerWalkSpd * h * Time.deltaTime, 0f);
@@ -141,7 +161,7 @@ public class PlayerController : MonoBehaviour {
         isJumping = true;
         isDoubleJumping = false;
 
-        playerAnimator.SetTrigger("Jump");
+        //playerAnimator.SetTrigger("Jump");
         playerAnimator.SetBool("Grounded", false);
     }      
 
@@ -169,7 +189,7 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    void reSpawn()
+    public void reSpawn()
     {
         playerTransform.position = GameController.Instance.currentSpawnPoint.position;
     }

@@ -28,7 +28,7 @@ public class ThrowStone : MonoBehaviour {
             other.GetComponentsInChildren<BoxCollider2D>()[1].enabled = false;
             other.GetComponent<EnemyController>().enabled = false;
             // Make the enemy bounce off the ground
-            other.GetComponent<Rigidbody2D>().AddForce(new Vector2(5f * bounceDir.x, 5f), ForceMode2D.Impulse);
+            other.attachedRigidbody.AddForce(new Vector2(5f * bounceDir.x, 5f), ForceMode2D.Impulse);
             other.transform.rotation = Quaternion.LookRotation(other.transform.forward, -other.transform.up);
             //other.transform.localEulerAngles += new Vector3(180, 0, 0);
             

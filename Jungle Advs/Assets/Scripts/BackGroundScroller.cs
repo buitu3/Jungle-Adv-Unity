@@ -3,18 +3,33 @@ using System.Collections;
 
 public class BackGroundScroller : MonoBehaviour {
 
-    public float speed;
+    //==============================================
+    // Constants
+    //==============================================
 
     public static BackGroundScroller current;
 
+    //==============================================
+    // Fields
+    //==============================================
+
+    public float speed;
     float pos = 0f;
 
-	// Use this for initialization
-	void Start () {
+    //==============================================
+    // Unity Methods
+    //==============================================
+
+    // Use this for initialization
+    void Start () {
         current = this;
 	}
-	
-	public void Go(float h)
+
+    //==============================================
+    // Methods
+    //==============================================
+
+    public void Go(float h)
     {
         pos += speed * Time.deltaTime * h;
         if (pos > 1f)
