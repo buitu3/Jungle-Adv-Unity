@@ -37,6 +37,9 @@ public class EnemyPlayerChecker : MonoBehaviour {
             case "Box":
                 gameObject.GetComponentInParent<EnemyController>().Flip();
                 break;
+
+            default:
+                break;
         }
 
 
@@ -80,36 +83,24 @@ public class EnemyPlayerChecker : MonoBehaviour {
         PlayerController.Instance.playerAnimator.SetTrigger("Hurt");
 
         // Decrease Player's health
-        if (PlayerController.Instance.health - 1 > 0)
+        if (PlayerController.Instance.currentHealth - 1 > 0)
         {
-            PlayerController.Instance.health -= 1;
+            PlayerController.Instance.currentHealth -= 1;
             GameController.Instance.updateHealthBar();
         }
         else
         {
             // Player die if out of health
-            PlayerController.Instance.health = 0;
+            PlayerController.Instance.currentHealth = 0;
             GameController.Instance.updateHealthBar();
 
-            // Reduce Player life count
-            if (GameController.Instance.lifeCount > 0)
-            {
-                GameController.Instance.lifeCount -= 1;
-            }
-            else
-            {
-                GameController.Instance.lifeCount = 0;
-            }
-            GameController.Instance.updateLifeCount();
-            
-            // Play Player die animation
+            // Play Player die animation based on impact direction
             Vector2 dieDir = (PlayerController.Instance.transform.position - gameObject.transform.position);
             if ((PlayerController.Instance.isFacingLeft && dieDir.x > 0) ||
                 (!PlayerController.Instance.isFacingLeft && dieDir.x < 0))
             {
                 print("die left");
-                PlayerController.Instance.playerAnimator.SetTrigger("DieLeft");
-                
+                PlayerController.Instance.playerAnimator.SetTrigger("DieLeft");                
             }
             else 
             {
@@ -117,8 +108,24 @@ public class EnemyPlayerChecker : MonoBehaviour {
                 PlayerController.Instance.playerAnimator.SetTrigger("DieRight");
             }
 
-            // Show game over scene
-            GameController.Instance.gameOver();
+            // Reduce Player life count
+            // Show lifeOver UI and respawn Player
+            if (GameController.Instance.lifeCount > 0)
+            {
+                GameController.Instance.lifeCount -= 1;
+                yield return new WaitForSeconds(2f);
+                StartCoroutine(GameController.Instance.lifeOver());
+            }
+            // Show gameover UI if Player run out of lives
+            else
+            {
+                GameController.Instance.lifeCount = 0;
+                yield return new WaitForSeconds(2f);
+                GameController.Instance.gameOver();
+            }
+            GameController.Instance.updateLifeCount();
+
+            yield break;
         }
 
         // Make Player able to move again when done playing hurt animation

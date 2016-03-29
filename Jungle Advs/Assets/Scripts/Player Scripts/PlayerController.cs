@@ -5,11 +5,15 @@ public class PlayerController : MonoBehaviour {
 
     public static PlayerController Instance;
 
+    public Transform groundCheck;
+    public LayerMask whatIsGround;
     public float playerWalkSpd;
     public float jumpForce;
     public float doubleJumpForce;
     public float fireRate = 0.5f;
-    public int health = 5;
+    public int maxHealth;
+    [HideInInspector]
+    public int currentHealth;
 
     public GameObject stone;
     public Transform stoneThrowPos;
@@ -37,6 +41,7 @@ public class PlayerController : MonoBehaviour {
     private bool moveRightBtnPressed = false;
 
     private float nextFire;
+    private float hMobileInput = 0f;
 
     //public enum playerStates
     //{
@@ -60,10 +65,13 @@ public class PlayerController : MonoBehaviour {
         playerTransform = GetComponent<Transform>();
         playerRigidbody = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
+
+        currentHealth = maxHealth;
 	}
 
     void Update()
     {
+    //#if !UNITY_ANDROID && !UNITY_IOS
         if (Input.GetButtonDown("Jump") && canActive)
         {
             if (isGrounded)
@@ -87,43 +95,47 @@ public class PlayerController : MonoBehaviour {
                 nextFire = Time.time + fireRate;
             }
         }
-
-        //// Ressurect Player if fall down
-        //if (playerTransform.position.y < -20)
-        //{
-        //    reSpawn();
-        //}
+    //#endif
 	}
 
     void FixedUpdate()
     {        
         float h = Input.GetAxis("Horizontal");
 
-        if (h != 0 && canActive)
+        if (canActive)
         {
-            Move(h);
+            Move(hMobileInput);
         }
 
-        checkMoveBtnPressed();
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, whatIsGround);
+        playerAnimator.SetBool("Grounded", isGrounded);
+
+        //if (h != 0 && canActive)
+        //{
+        //    Move(h);
+        //}
+
+        //checkMoveBtnPressed();
 
         playerAnimator.SetFloat("speed", Mathf.Abs(playerRigidbody.velocity.x));
 
         playerAnimator.SetFloat("vspeed", playerRigidbody.velocity.y);
 
         // Respawn if Player fall into the deep
-        if (playerTransform.position.y < -20)
+        if (playerTransform.position.y < -20 && canActive)
         {
+            canActive = false;
             if (GameController.Instance.lifeCount > 0)
             {
                 GameController.Instance.lifeCount -= 1;
+                StartCoroutine(GameController.Instance.lifeOver());
             }
             else
             {
                 GameController.Instance.lifeCount = 0;
+                GameController.Instance.gameOver();
             }
             GameController.Instance.updateLifeCount();
-
-            PlayerController.Instance.reSpawn();
         }
     }
 
@@ -191,7 +203,18 @@ public class PlayerController : MonoBehaviour {
 
     public void reSpawn()
     {
+        canActive = true;
+        playerRigidbody.velocity = new Vector2(0f, 0f);
+        GameObject.FindGameObjectsWithTag("MainCamera")[0].transform.position = GameController.Instance.currentSpawnPoint.position;
         playerTransform.position = GameController.Instance.currentSpawnPoint.position;
+        if (isFacingLeft)
+        {
+            Flip();
+            isFacingLeft = false;
+        }     
+        playerAnimator.SetBool("Active", true);
+        currentHealth = maxHealth;
+        GameController.Instance.updateHealthBar();
     }
 
     private void Flip()
@@ -210,7 +233,12 @@ public class PlayerController : MonoBehaviour {
         }  
     }
 
-    #region Mobile buttons control methods
+#region Mobile buttons control methods
+
+    public void startMoving(float h)
+    {
+        hMobileInput = h;
+    }
 
     // Check Moving Btn State and call move method accordingly
     public void onBtnMoveLeftStateChanged(bool state)
@@ -266,7 +294,8 @@ public class PlayerController : MonoBehaviour {
             GameController.Instance.updateStoneText();
             StartCoroutine(throwStone());
 
-            nextFire = Time.time + fireRate;        }
+            nextFire = Time.time + fireRate;
+        }
     }
-    #endregion
+#endregion
 }

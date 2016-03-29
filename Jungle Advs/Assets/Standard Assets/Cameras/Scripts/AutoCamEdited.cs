@@ -97,18 +97,21 @@ public class AutoCamEdited : PivotBasedCameraRig
         // camera position moves towards target position:
         //transform.position = Vector3.Lerp(transform.position, m_Target.position, deltaTime * m_MoveSpeed);
         //transform.position = Vector3.Lerp(transform.position, new Vector3(m_Target.position.x, transform.position.y, 0f), deltaTime * m_MoveSpeed);
-        transform.position = Vector3.Lerp(transform.position, new Vector3(m_Target.position.x, m_Target.position.y, 0f), deltaTime * m_MoveSpeed);
+        if (m_Target.position.y > -2f)
+        {
+            transform.position = Vector3.Lerp(transform.position, new Vector3(m_Target.position.x, m_Target.position.y, 0f), deltaTime * m_MoveSpeed);
+        }       
 
         // camera's rotation is split into two parts, which can have independend speed settings:
         // rotating towards the target's forward direction (which encompasses its 'yaw' and 'pitch')
-        if (!m_FollowTilt)
-        {
-            targetForward.y = 0;
-            if (targetForward.sqrMagnitude < float.Epsilon)
-            {
-                targetForward = transform.forward;
-            }
-        }
+        //if (!m_FollowTilt)
+        //{
+        //    targetForward.y = 0;
+        //    if (targetForward.sqrMagnitude < float.Epsilon)
+        //    {
+        //        targetForward = transform.forward;
+        //    }
+        //}
         //var rollRotation = Quaternion.LookRotation(targetForward, m_RollUp);
 
         // and aligning with the target object's up direction (i.e. its 'roll')
