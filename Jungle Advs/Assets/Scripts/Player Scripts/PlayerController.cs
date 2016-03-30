@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour {
 
     public GameObject stone;
     public Transform stoneThrowPos;
+    public AudioClip playerDieSound;
+    public AudioClip jumpSound;
+    public AudioClip throwStoneSound;
 
     [HideInInspector]
     public Transform playerTransform;
@@ -71,7 +74,7 @@ public class PlayerController : MonoBehaviour {
 
     void Update()
     {
-    //#if !UNITY_ANDROID && !UNITY_IOS
+    #if !UNITY_ANDROID && !UNITY_IOS
         if (Input.GetButtonDown("Jump") && canActive)
         {
             if (isGrounded)
@@ -95,12 +98,12 @@ public class PlayerController : MonoBehaviour {
                 nextFire = Time.time + fireRate;
             }
         }
-    //#endif
+    #endif
 	}
 
     void FixedUpdate()
     {        
-        float h = Input.GetAxis("Horizontal");
+        //float h = Input.GetAxis("Horizontal");
 
         if (canActive)
         {
@@ -108,7 +111,17 @@ public class PlayerController : MonoBehaviour {
         }
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, whatIsGround);
-        playerAnimator.SetBool("Grounded", isGrounded);
+        if (playerRigidbody.velocity.y <= 0)
+        {
+            playerAnimator.SetBool("Grounded", isGrounded);
+        }        
+        else
+        {
+            isGrounded = false;
+            playerAnimator.SetBool("Grounded", false);
+        }
+        
+        
 
         //if (h != 0 && canActive)
         //{
@@ -121,7 +134,7 @@ public class PlayerController : MonoBehaviour {
 
         playerAnimator.SetFloat("vspeed", playerRigidbody.velocity.y);
 
-        // Respawn if Player fall into the deep
+        // Kill Player if fall into the deep
         if (playerTransform.position.y < -20 && canActive)
         {
             canActive = false;
@@ -136,6 +149,7 @@ public class PlayerController : MonoBehaviour {
                 GameController.Instance.gameOver();
             }
             GameController.Instance.updateLifeCount();
+            SoundController.Instance.playSingleClip(playerDieSound);
         }
     }
 
@@ -175,6 +189,8 @@ public class PlayerController : MonoBehaviour {
 
         //playerAnimator.SetTrigger("Jump");
         playerAnimator.SetBool("Grounded", false);
+
+        SoundController.Instance.playSingleClip(jumpSound);
     }      
 
     void doubleJump()
@@ -185,6 +201,7 @@ public class PlayerController : MonoBehaviour {
         isDoubleJumping = true;
 
         playerAnimator.SetTrigger("DoubleJump");
+        SoundController.Instance.playSingleClip(jumpSound);
     }
 
     private IEnumerator throwStone()
@@ -194,10 +211,12 @@ public class PlayerController : MonoBehaviour {
             playerAnimator.SetTrigger("ThrowStone");
             yield return new WaitForSeconds(0.4f);
             Instantiate(stone, stoneThrowPos.position, Quaternion.identity);
+            SoundController.Instance.playSingleClip(throwStoneSound);
         }
         else
         {
             Instantiate(stone, stoneThrowPos.position, Quaternion.identity);
+            SoundController.Instance.playSingleClip(throwStoneSound);
         }
     }
 

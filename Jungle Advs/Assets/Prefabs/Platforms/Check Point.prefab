@@ -108,6 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d8ccefbaa44f142b9990cfee5c8d71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkPointSound: {fileID: 8300000, guid: 7604f51293cde4b4ab9b2ca4558dcc6d, type: 3}
 --- !u!114 &11448958
 MonoBehaviour:
   m_ObjectHideFlags: 1

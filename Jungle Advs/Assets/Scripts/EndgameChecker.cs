@@ -3,6 +3,8 @@ using System.Collections;
 
 public class EndgameChecker : MonoBehaviour {
 
+    public AudioClip levelClearSound;
+
     IEnumerator OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
@@ -11,6 +13,7 @@ public class EndgameChecker : MonoBehaviour {
             AutoCamEdited.Instance.enabled = false;
             PlayerController.Instance.canActive = false;
             StartCoroutine(PlayerController.Instance.movePlayerToTheEnd());
+            SoundController.Instance.playSingleClip(levelClearSound);
             yield return new WaitForSeconds(4f);
             GameController.Instance.completeGame();
         }

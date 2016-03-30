@@ -24,6 +24,8 @@ public class GameController : MonoBehaviour {
     public Text worldNumberText;
     public Text levelNumberText;
     public Text lifeNumberText;
+    // GameOver Panel
+    public GameObject gameOverPanel;
 
     public Transform currentSpawnPoint;
 
@@ -92,7 +94,8 @@ public class GameController : MonoBehaviour {
 
     public void gameOver()
     {
-        print("gameOver");
+        //print("gameOver");
+        gameOverPanel.SetActive(true);
     }
 
     public void updateLifeCount()

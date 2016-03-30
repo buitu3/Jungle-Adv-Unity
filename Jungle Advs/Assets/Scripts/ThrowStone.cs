@@ -4,6 +4,7 @@ using System.Collections;
 public class ThrowStone : MonoBehaviour {
 
     private Rigidbody2D stoneRigidbody;
+    public AudioClip enemyDieSound;
 
 	void Start () {
         stoneRigidbody = GetComponent<Rigidbody2D>();
@@ -35,6 +36,7 @@ public class ThrowStone : MonoBehaviour {
             Destroy(this.gameObject);
             Destroy(other.gameObject, 2.0f);
 
+            SoundController.Instance.playSingleClip(enemyDieSound);
         }
     }
 }

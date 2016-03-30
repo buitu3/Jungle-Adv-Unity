@@ -4,6 +4,9 @@ using System.Collections;
 public class EnemyPlayerChecker : MonoBehaviour {
 
     public Rigidbody2D enemyRigidbody;
+    public AudioClip playerHurtSound;
+    public AudioClip playerDieSound;
+    public AudioClip enemyDieSound;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -16,6 +19,7 @@ public class EnemyPlayerChecker : MonoBehaviour {
                     StartCoroutine(knockPlayerBack());
                 }
 
+                // Kill enemy if Player jump on it's head
                 if (PlayerController.Instance.GetComponent<Rigidbody2D>().velocity.y < 0)
                 {
                     other.attachedRigidbody.velocity =
@@ -31,6 +35,8 @@ public class EnemyPlayerChecker : MonoBehaviour {
                         Quaternion.LookRotation(gameObject.transform.parent.forward, -gameObject.transform.parent.up);
 
                     Destroy(gameObject.transform.parent.gameObject, 2.0f);
+
+                    SoundController.Instance.playSingleClip(enemyDieSound);
                 }
                 break;
 
@@ -87,12 +93,16 @@ public class EnemyPlayerChecker : MonoBehaviour {
         {
             PlayerController.Instance.currentHealth -= 1;
             GameController.Instance.updateHealthBar();
+
+            SoundController.Instance.playSingleClip(playerHurtSound);
         }
         else
         {
             // Player die if out of health
             PlayerController.Instance.currentHealth = 0;
             GameController.Instance.updateHealthBar();
+
+            SoundController.Instance.playSingleClip(playerDieSound);
 
             // Play Player die animation based on impact direction
             Vector2 dieDir = (PlayerController.Instance.transform.position - gameObject.transform.position);

@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07e7d0f3586a2804f9a7ce4afe8be833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpd: 2
+  enemySpd: 1.5
 --- !u!114 &11453534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -220,6 +220,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyRigidbody: {fileID: 5087794}
+  playerHurtSound: {fileID: 8300000, guid: 764d4aacb8112ef4e976ac8c68f99f76, type: 3}
+  playerDieSound: {fileID: 8300000, guid: cdd992b00c1bce54bad1b3b0308c5f11, type: 3}
+  enemyDieSound: {fileID: 8300000, guid: 85a09594012a5a14580e0cc6f8e492d0, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

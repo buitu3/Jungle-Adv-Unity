@@ -71,6 +71,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60f0da90f21eeff4d9bfc3c366d53024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fruitTakenSound: {fileID: 8300000, guid: 5873294a786dd4c48bbeede9d4dad9da, type: 3}
+  stoneTakenSound: {fileID: 8300000, guid: ed9ed200239287041bf1b87634c0b937, type: 3}
   localPosition: {x: 0, y: 0, z: 0}
 --- !u!212 &21297154
 SpriteRenderer:

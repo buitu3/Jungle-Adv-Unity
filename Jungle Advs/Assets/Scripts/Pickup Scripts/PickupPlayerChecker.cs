@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PickupPlayerChecker : MonoBehaviour {
 
+    public AudioClip fruitTakenSound;
+    public AudioClip stoneTakenSound;
     [HideInInspector]
     public Vector3 localPosition;
 
@@ -20,12 +22,14 @@ public class PickupPlayerChecker : MonoBehaviour {
                 Destroy(gameObject);
                 GameController.Instance.fruitCount++;
                 GameController.Instance.updateFruitText();
+                SoundController.Instance.playSingleClip(fruitTakenSound);
             }
             else if (this.tag == "Weapon")
             {
                 Destroy(gameObject);
                 GameController.Instance.stoneCount += 10;
                 GameController.Instance.updateStoneText();
+                SoundController.Instance.playSingleClip(stoneTakenSound);
             }
         }
 
