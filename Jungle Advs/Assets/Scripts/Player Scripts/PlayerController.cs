@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour {
 
     public static PlayerController Instance;
 
-    public Transform groundCheck;
+    public Transform[] groundCheck;
     public LayerMask whatIsGround;
     public float playerWalkSpd;
     public float jumpForce;
@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour {
 
     void Update()
     {
-    #if !UNITY_ANDROID && !UNITY_IOS
+    //#if !UNITY_ANDROID && !UNITY_IOS
         if (Input.GetButtonDown("Jump") && canActive)
         {
             if (isGrounded)
@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour {
                 nextFire = Time.time + fireRate;
             }
         }
-    #endif
+    //#endif
 	}
 
     void FixedUpdate()
@@ -110,7 +110,9 @@ public class PlayerController : MonoBehaviour {
             Move(hMobileInput);
         }
 
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.2f, whatIsGround);
+        isGrounded = Physics2D.OverlapCircle(groundCheck[0].position, 0.2f, whatIsGround)
+            || Physics2D.OverlapCircle(groundCheck[1].position, 0.2f, whatIsGround);
+ 
         if (playerRigidbody.velocity.y <= 0)
         {
             playerAnimator.SetBool("Grounded", isGrounded);
